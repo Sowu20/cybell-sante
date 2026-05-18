@@ -1,3 +1,5 @@
+import PartnersContent from "@/components/partners/partnerContent";
+
 export default function PartnersPage() {
-    return <h1>Nos Partenaires</h1>;
+    return <PartnersContent />;
 }
