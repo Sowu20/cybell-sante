@@ -1,26 +1,448 @@
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Inter:wght@400;500;600&display=swap');
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+  --background: #f7f9fb;
+  --foreground: #191c1e;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --primary: #074691;
+  --primary-fixed: #d7e2ff;
+  --secondary: #b7102a;
+  --tertiary: #005052;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --surface: #f7f9fb;
+  --surface-container-highest: #e0e3e5;
+  --surface-bright: #f7f9fb;
+  --surface-container: #eceef0;
+  --surface-highest: #e0e3e5;
+
+  --on-surface: #191c1e;
+  --on-surface-variant: #434751;
+
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
 }
 
 body {
+  margin: 0;
+  padding: 0;
   background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--on-surface);
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.hero-container {
+  position: relative;
+  overflow: hidden;
+  padding: 5rem;
+  padding-bottom: 5rem;
+  background-color: var(--surface-bright);
+}
+
+.pill-badge {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-xl);
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  background-color: rgba(183, 16, 42, 0.1);
+  color: var(--secondary);
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(1, minimax(0, 1fr));
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .services-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .services-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* Section Call To Action (Le conteneur asymétrique bento) */
+.cta-box {
+  position: relative;
+  overflow: hidden;
+  background-color: white;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 4px 20px rgba(46, 94, 170, 0.08);
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .cta-box {
+    grid-template-columns: repeat(12, 1fr);
+    align-items: center;
+  }
+}
+
+/* Footer Épuré Professionnel */
+.site-footer {
+  background-color: var(--surface-container-highest);
+  border-top-left-radius: var(--radius-lg);
+  border-top-right-radius: var(--radius-lg);
+  margin-top: 4rem;
+}
+
+.footer-nav-link {
+  color: var(--on-surface-variant);
+  font-size: 0.875rem;
+  transition: color 0.2s ease;
+  text-decoration: none;
+}
+
+.footer-nav-link:hover {
+  color: var(--secondary);
+}
+
+.footer-social-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 9999px;
+  background-color: rgba(7, 70, 145, 0.1);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.footer-social-icon:hover {
+  background-color: var(--primary);
+  color: white;
+}
+
+.soft-shadow {
+  box-shadow: 0 4px 20px rgba(46, 94, 170, 0.08);
+}
+
+.card {
+  background: white;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 4px 20px rgba(46, 94, 170, 0.08);
+  transition: all 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(46, 94, 170, 0.12);
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+}
+
+.btn {
+  border-radius: var(--radius-md);
+  transition: all 0.2s ease;
+}
+
+.btn:hover {
+  transform: scale(1.02);
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: white;
+}
+
+.btn-secondary {
+  background: var(--secondary);
+  color: white;
+}
+
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 24px;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* ... Tes styles précédents (variables, body, .card, .btn) ... */
+
+/* --- Structure de la Page Contact --- */
+.contact-container {
+  min-height: 100vh;
+  padding: 3rem 1rem;
+}
+
+@media (min-width: 768px) {
+  .contact-container {
+    padding: 3rem 4rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .contact-container {
+    padding: 3rem 8rem;
+  }
+}
+
+.contact-wrapper {
+  max-width: 64rem; /* max-w-5xl */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Badge "Contactez-nous" */
+.badge-info {
+  display: inline-block;
+  background-color: rgba(7, 70, 145, 0.1);
+  color: var(--primary);
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 0.25rem 1rem;
+  border-radius: var(--radius-xl);
+  margin-bottom: 0.75rem;
+}
+
+/* --- Formulaires Épurés (Corporate Modern) --- */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-label {
+  display: block;
+  text-size-adjust: 0.875rem;
+  font-weight: 600;
+  color: var(--on-surface-variant);
+}
+
+.form-input {
+  width: 100%;
+  background-color: var(--surface-container);
+  border: 1px solid var(--surface-container-highest);
+  padding: 0.75rem;
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+  color: var(--on-surface);
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--primary);
+  background-color: white;
+  box-shadow: 0 0 0 3px rgba(7, 70, 145, 0.1);
+}
+
+.form-textarea {
+  resize: none;
+}
+
+/* --- Grille et Cartes Thématiques --- */
+
+.themes-grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 24px; /* variable md / gutter */
+}
+
+@media (min-width: 768px) {
+  .themes-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .themes-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+/* Base de la carte thématique */
+.theme-card {
+  background-color: #ffffff;
+  border-radius: var(--radius-lg); /* 1rem selon le design doc */
+  box-shadow: 0 4px 20px rgba(46, 94, 170, 0.08);
+  transition: all 0.3s ease;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border-top-width: 4px;
+  border-top-style: solid;
+}
+
+/* Variations dynamiques de la bordure haute */
+.theme-card.border-primary {
+  border-top-color: var(--primary);
+}
+
+.theme-card.border-secondary {
+  border-top-color: var(--secondary);
+}
+
+/* Animation au survol */
+.theme-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(46, 94, 170, 0.12);
+}
+
+/* Conteneur de l'icône circulaire */
+.theme-icon-wrapper {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  transition: transform 0.3s ease;
+}
+
+.theme-card:hover .theme-icon-wrapper {
+  transform: scale(1.1);
+}
+
+/* Couleurs d'icônes basées sur la couleur de la carte */
+.theme-card.border-primary .theme-icon-wrapper {
+  background-color: rgba(7, 70, 145, 0.1);
+  color: var(--primary);
+}
+
+.theme-card.border-secondary .theme-icon-wrapper {
+  background-color: rgba(183, 16, 42, 0.1);
+  color: var(--secondary);
+}
+
+/* Bouton "En savoir plus" */
+.theme-btn-more {
+  margin-top: auto; /* Aligne le bouton tout en bas si les textes ont des longueurs différentes */
+  color: var(--primary);
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.875rem;
+  transition: color 0.2s ease;
+}
+
+.theme-btn-more:hover {
+  color: var(--secondary);
+  text-decoration: underline;
+}
+/* --- Styles de la Page À Propos --- */
+
+/* Badge de catégorie pour l'engagement (Vert Canard / Tétracouleur) */
+.pill-badge-tertiary {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-xl);
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  background-color: rgba(0, 80, 82, 0.1); /* Fond teal à 10% d'opacité */
+  color: var(--tertiary);
+}
+
+/* Grille spécifique pour Mission & Vision (2 colonnes égales) */
+.about-split-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .about-split-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Grille pour les avantages "Pourquoi nous choisir ?" (3 colonnes) */
+.why-us-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .why-us-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Conteneur d'icône pour les cartes de valeurs */
+.value-icon-box {
+  width: 3rem;
+  height: 3rem;
+  border-radius: var(--radius-md);
+  background-color: rgba(7, 70, 145, 0.08); /* 8% Bleu Primaire */
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+
+.activities-page-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .activities-page-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+.activity-icon-container {
+  width: 3rem;
+  height: 3rem;
+  border-radius: var(--radius-md);
+  background-color: rgba(7, 70, 145, 0.08);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.activity-page-card {
+  background-color: white;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 4px 20px rgba(46, 94, 170, 0.06);
+  padding: 1.5rem;
+  display: flex;
+  align-items: start;
+  gap: 1.25rem;
+  border: 1px solid var(--surface-container);
+  transition: all 0.25s ease;
+}
+
+.activity-page-container {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(46, 94, 170, 0.1);
+  border-color: var(--primary-fixed);
 }
