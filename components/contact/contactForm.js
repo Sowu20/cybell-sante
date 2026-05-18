@@ -8,6 +8,7 @@ export default function ContactForm() {
     const [adresse, setAdresse] = useState("");
     const [telephone, setTelephone] = useState("");
     const [email, setEmail] = useState("");
+    const [objet, setObjet] = useState("");
     const [message, setMessage] = useState("");
 
     const handleSubmit = async (e) => {
@@ -15,9 +16,10 @@ export default function ContactForm() {
         const response = await fetch("/api/contact", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ nom, prenom, adresse, telephone, email, message }),
+            body: JSON.stringify({ nom, prenom, adresse, telephone, email, objet }),
         });
         const data = await response.json();
+        setMessage(data.message);
         console.log(data);
     };
 
@@ -135,11 +137,17 @@ export default function ContactForm() {
                                     rows="4"
                                     placeholder="Comment pouvons-nous vous aider ?"
                                     className="form-input form-textarea"
-                                    value={message}
-                                    onChange={(e) => setMessage(e.target.value)}
+                                    value={objet}
+                                    onChange={(e) => setObjet(e.target.value)}
                                     required
                                 ></textarea>
                             </div>
+
+                            {message && (
+                                <p className="text-green-600 font-medium">
+                                    {message}
+                                </p>
+                            )}
 
                             <div className="pt-2">
                                 <button type="submit" className="btn btn-primary w-full sm:w-auto px-8 py-3 font-semibold shadow-md text-sm cursor-pointer">
