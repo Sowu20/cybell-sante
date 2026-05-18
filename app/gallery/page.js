@@ -1,3 +1,5 @@
+import GalleryContent from "@/components/gallery/galleryContent";
+
 export default function GaleryPage() {
-    return <h1>Nos souvenirs</h1>;
+    return <GalleryContent />;
 }
