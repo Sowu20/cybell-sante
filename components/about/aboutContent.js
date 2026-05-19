@@ -25,7 +25,7 @@ export default function AboutContent() {
         <div className="flex-1 flex justify-center w-full max-w-md md:max-w-none">
           <div className="relative rounded-lg overflow-hidden soft-shadow">
             <Image
-              src="/logo/logo.jpg"
+              src="/images/about.png"
               alt="À propos CYBELL-SANTÉ"
               width={550}
               height={400}
@@ -125,6 +125,47 @@ export default function AboutContent() {
             </p>
           </div>
 
+        </div>
+      </div>
+
+      {/* --- Nouvelle Section : Collaboration (Version Finale Validée) --- */}
+      <div className="bg-white border-t border-(--surface-container-high)">
+        <div className="max-w-7xl mx-auto px-6 md:px-16 py-16 md:py-20">
+          <div className="about-collaborate-grid">
+            
+            {/* Colonne Gauche : Visuel Illustratif (Mis à jour avec l'image) */}
+            <div className="flex justify-center md:justify-start w-full">
+              <div className="collaborate-image-container w-full max-w-112.5">
+                <div className="relative rounded-lg overflow-hidden soft-shadow border border-(--surface-container-high) bg-white p-2">
+                  <Image
+                    src="/images/about2.png"
+                    alt="Collaboration CYBELL-SANTÉ"
+                    width={450}
+                    height={320}
+                    className="w-full h-auto rounded-md object-cover transform hover:scale-[1.03] transition duration-500"
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* Colonne Droite : Textes et CTA */}
+            <div className="flex flex-col items-start">
+              <span className="inline-block px-3 py-1 rounded-full bg-red-50 text-(--secondary) text-xs font-bold mb-4 uppercase tracking-wider">
+                Bâtir lavenir ensemble
+              </span>
+              <h2 className="text-3xl font-bold text-(--primary) mb-4">
+                Collaborons pour une communauté plus forte
+              </h2>
+              <p className="text-(--on-surface-variant) text-base leading-relaxed mb-6 font-medium">
+                La sensibilisation et la prévention sont laffaire de tous. En travaillant main dans la main avec les éducateurs, les professionnels de santé et les institutions, nous créons un écosystème pérenne et adapté aux besoins de la jeunesse.
+              </p>
+              <button className="btn btn-primary px-6 py-3.5 font-bold text-sm shadow-md hover:opacity-90 transition-all flex items-center gap-2">
+                <span className="material-symbols-outlined text-lg">diversity_3</span>
+                Rejoindre notre réseau
+              </button>
+            </div>
+
+          </div>
         </div>
       </div>
 
