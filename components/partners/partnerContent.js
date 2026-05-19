@@ -1,5 +1,12 @@
+import { Scale, School, Radio, Handshake } from "lucide-react";
 import { partners } from "@/data/partners";
 import PartnerCard from "./partnerCard";
+
+const iconMap = {
+  gavel: Scale,
+  local_hospitale: School,
+  broadcast_on_home: Radio,
+};
 
 export default function PartnersContent() {
   return (
@@ -26,7 +33,7 @@ export default function PartnersContent() {
               name={partner.name}
               type={partner.type}
               description={partner.description}
-              icon={partner.icon}
+              icon={iconMap[partner.icon]}
             />
           ))}
         </div>
@@ -43,13 +50,13 @@ export default function PartnersContent() {
             <p className="text-(--on-surface-variant) text-sm md:text-base m-0 font-medium leading-relaxed">
               Que vous soyez une ONG, une entreprise, une institution publique ou un établissement scolaire, votre engagement peut faire la différence dans la sensibilisation des communautés.
             </p>
-          </div>
-          
-          <div className="shrink-0 w-full md:w-auto text-center">
-            <button className="btn btn-primary w-full md:w-auto px-8 py-4 font-bold text-sm shadow-md hover:opacity-90 transition-all flex items-center justify-center gap-2">
-              <span className="material-symbols-outlined text-lg">handshake</span>
-              Coopérer avec nous
-            </button>
+
+            <div className="shrink-0 w-full md:w-auto text-center">
+              <button className="btn btn-primary w-full md:w-auto px-8 py-4 font-bold text-sm shadow-md hover:opacity-90 transition-all flex items-center justify-center gap-2">
+                <Handshake />
+                Coopérer avec nous
+              </button>
+            </div>
           </div>
         </div>
 

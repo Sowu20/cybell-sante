@@ -1,5 +1,14 @@
+import { HeartPulse, Bug, Stethoscope, Users, Baby } from "lucide-react";
 import { themes } from "@/data/themes";
 import ThemeCard from "./themeCard";
+
+const iconMap = {
+  vital_signs: HeartPulse,
+  bug_report: Bug,
+  accessibility_new: Stethoscope,
+  family_restroom: Users,
+  medical_services: Baby,
+};
 
 export default function ThemesContent() {
   return (
@@ -16,7 +25,7 @@ export default function ThemesContent() {
             key={index}
             name={theme.name}
             description={theme.description}
-            icon={theme.icon} // Transmis pour afficher le bon symbole (ex: "vital_signs", "bug_report")
+            icon={iconMap[theme.icon]} // Transmis pour afficher le bon symbole (ex: "vital_signs", "bug_report")
             color={theme.color} // Attendu: "primary" ou "secondary"
           />
         ))}

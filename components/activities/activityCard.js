@@ -1,10 +1,10 @@
-export default function ActivityCard({ title, description, icon }) {
+export default function ActivityCard({ title, description, icon: Icon }) {
   return (
     <div className="activity-page-card">
       {/* Conteneur d'icône sémantique */}
       <div className="activity-icon-container">
         <span className="material-symbols-outlined text-2xl font-light">
-          {icon || "extension"}
+          {Icon && <Icon className="w-8 h-8" />}
         </span>
       </div>
 

@@ -1,5 +1,15 @@
+import { Dice5, School, Radio, Tv, Gamepad2, Disc3 } from "lucide-react";
 import { activities } from "@/data/activities";
 import ActivityCard from "./activityCard";
+
+const iconMap = {
+  casino: Dice5,
+  school: School,
+  radio: Radio,
+  tv: Tv,
+  sports_esports: Gamepad2,
+  album: Disc3
+}
 
 export default function ActivitiesContent() {
   return (
@@ -27,7 +37,7 @@ export default function ActivitiesContent() {
               key={index}
               title={activity.title}
               description={activity.description}
-              icon={activity.icon}
+              icon={iconMap[activity.icon]}
             />
           ))}
         </div>

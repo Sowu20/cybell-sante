@@ -1,15 +1,13 @@
-export default function ThemeCard({ name, description, icon, color }) {
+export default function ThemeCard({ name, description, color, icon: Icon }) {
   // Détermination de la classe de bordure de manière sécurisée
   const cardBorderClass = color === "secondary" ? "border-secondary" : "border-primary";
 
   return (
     <div className={`theme-card ${cardBorderClass}`}>
       {/* Conteneur d'icône dynamique */}
-      {icon && (
+      {Icon && (
         <div className="theme-icon-wrapper">
-          <span className="material-symbols-outlined text-4xl">
-            {icon}
-          </span>
+          <Icon className="w-8 h-8" />
         </div>
       )}
 
