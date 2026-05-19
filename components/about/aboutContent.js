@@ -1,3 +1,4 @@
+import { Target, View, School, Laptop, Group, UserCheck } from "lucide-react";
 import Image from "next/image";
 
 export default function AboutContent() {
@@ -43,7 +44,7 @@ export default function AboutContent() {
           {/* Carte Mission (Accent Rouge Secondaire) */}
           <div className="card p-8 border-t-4 border-(--secondary) flex flex-col gap-3">
             <div className="flex items-center gap-3">
-              <span className="material-symbols-outlined text-(--secondary) text-3xl">target</span>
+              <Target />
               <h2 className="text-2xl font-bold text-(--on-surface) m-0">
                 Notre mission
               </h2>
@@ -58,7 +59,7 @@ export default function AboutContent() {
           {/* Carte Vision (Accent Bleu Primaire - Aligné sur le design system) */}
           <div className="card p-8 border-t-4 border-(--primary) flex flex-col gap-3">
             <div className="flex items-center gap-3">
-              <span className="material-symbols-outlined text-(--primary) text-3xl">visibility</span>
+              <View />
               <h2 className="text-2xl font-bold text-(--on-surface) m-0">
                 Notre vision
               </h2>
@@ -86,7 +87,7 @@ export default function AboutContent() {
           {/* Valeur 1 : Pédagogie Active */}
           <div className="card p-6 flex flex-col items-start transition-all">
             <div className="value-icon-box">
-              <span className="material-symbols-outlined text-2xl">school</span>
+              <School />
             </div>
             <h3 className="text-lg font-bold text-(--on-surface) mb-3">
               Pédagogie Active
@@ -100,7 +101,7 @@ export default function AboutContent() {
           {/* Valeur 2 : Innovation Digitale */}
           <div className="card p-6 flex flex-col items-start transition-all">
             <div className="value-icon-box">
-              <span className="material-symbols-outlined text-2xl">devices</span>
+              <Laptop />
             </div>
             <h3 className="text-lg font-bold text-(--on-surface) mb-3">
               Innovation Digitale
@@ -114,7 +115,7 @@ export default function AboutContent() {
           {/* Valeur 3 : Impact Social */}
           <div className="card p-6 flex flex-col items-start transition-all">
             <div className="value-icon-box">
-              <span className="material-symbols-outlined text-2xl">groups</span>
+              <Group />
             </div>
             <h3 className="text-lg font-bold text-(--on-surface) mb-3">
               Impact Social
@@ -160,7 +161,7 @@ export default function AboutContent() {
                 La sensibilisation et la prévention sont laffaire de tous. En travaillant main dans la main avec les éducateurs, les professionnels de santé et les institutions, nous créons un écosystème pérenne et adapté aux besoins de la jeunesse.
               </p>
               <button className="btn btn-primary px-6 py-3.5 font-bold text-sm shadow-md hover:opacity-90 transition-all flex items-center gap-2">
-                <span className="material-symbols-outlined text-lg">diversity_3</span>
+                <UserCheck />
                 Rejoindre notre réseau
               </button>
             </div>
