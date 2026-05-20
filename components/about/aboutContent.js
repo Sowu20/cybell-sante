@@ -1,4 +1,5 @@
 import { Target, View, School, Laptop, Group, UserCheck } from "lucide-react";
+import Link from "next/link";
 import Image from "next/image";
 
 export default function AboutContent() {
@@ -162,7 +163,7 @@ export default function AboutContent() {
               </p>
               <button className="btn btn-primary px-6 py-3.5 font-bold text-sm shadow-md hover:opacity-90 transition-all flex items-center gap-2">
                 <UserCheck />
-                Rejoindre notre réseau
+                <Link href="/contact">Rejoindre notre réseau</Link>
               </button>
             </div>
 

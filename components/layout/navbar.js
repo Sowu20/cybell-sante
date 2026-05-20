@@ -5,7 +5,7 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 bg-white shadow-sm border-b border-(--surface-container)">
       <nav className="max-w-7xl mx-auto flex justify-between items-center px-6 md:px-16 py-4">
         <h1 className="text-xl font-bold text-(--primary) tracking-wide">
-          CYBELL-SANTÉ
+          <Link href="/">CYBELL-SANTÉ</Link>
         </h1>
 
         <ul className="hidden md:flex gap-6 text-sm font-semibold text-(--on-surface-variant) list-none pl-0">

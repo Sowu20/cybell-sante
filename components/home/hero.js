@@ -1,3 +1,4 @@
+import Link from "next/link";
 import BannerImage from "./bannerImage";
 
 export default function Hero() {
@@ -19,11 +20,11 @@ export default function Hero() {
 
           <div className="flex flex-wrap justify-center md:justify-start gap-4">
             <button className="btn btn-primary px-8 py-3 font-semibold shadow-md text-sm cursor-pointer">
-              Découvrir
+              <Link href="/themes">Découvrir</Link>
             </button>
 
             <button className="btn border-2 border-(--primary) text-(--primary) px-8 py-3 font-semibold hover:bg-[rgba(7,70,145,0.05)] text-sm cursor-pointer transition">
-              Notre mission
+              <Link href="/about">Notre mission</Link>
             </button>
           </div>
         </div>

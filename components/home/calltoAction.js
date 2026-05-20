@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function CallToAction() {
   return (
     <section className="py-20 px-6 md:px-16">
@@ -16,7 +18,7 @@ export default function CallToAction() {
           </p>
 
           <button className="bg-white text-blue-700 px-8 py-3 rounded-lg font-semibold shadow-md hover:-translate-y-1 transition">
-            Contactez-Nous
+            <Link href="/contact">Contactez-Nous</Link>
           </button>
         </div>
       </div>

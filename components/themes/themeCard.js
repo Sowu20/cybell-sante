@@ -1,3 +1,5 @@
+import { ArrowBigRight } from "lucide-react";
+
 export default function ThemeCard({ name, description, color, icon: Icon }) {
   // Détermination de la classe de bordure de manière sécurisée
   const cardBorderClass = color === "secondary" ? "border-secondary" : "border-primary";
@@ -21,7 +23,7 @@ export default function ThemeCard({ name, description, color, icon: Icon }) {
 
       <button className="theme-btn-more">
         En savoir plus 
-        <span className="material-symbols-outlined text-sm">arrow_forward</span>
+        <ArrowBigRight />
       </button>
     </div>
   );
