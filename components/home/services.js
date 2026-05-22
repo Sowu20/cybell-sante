@@ -16,7 +16,7 @@ export default function Services() {
         {/* Titre de section */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-(--primary) mb-4">
-            Nos solutions
+            Nos services
           </h2>
           <div className="w-12 h-1 bg-(--secondary) mx-auto rounded-full mb-4"></div>
           <p className="text-(--on-surface-variant) max-w-2xl mx-auto font-medium">
