@@ -20,13 +20,15 @@ export default function ActivitiesContent() {
         <div className="max-w-7xl mx-auto px-6 md:px-16">
           
          {/* Grille sémantique d'activités */}
-          <div className="activities-page-grid">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {activities.map((activity, index) => (
               <ActivityCard
                 key={index}
                 title={activity.title}
                 description={activity.description}
                 icon={iconMap[activity.icon]}
+                colorClass={activity.textBtn}
+                btnColorClass={activity.btnColorClass}
               />
             ))}
           </div>
