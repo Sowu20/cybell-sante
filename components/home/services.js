@@ -1,5 +1,12 @@
-import ServiceCard from "./serviceCard";
+import { Dice5, School, Gamepad2 } from "lucide-react";
 import { services } from "@/data/services";
+import ServiceCard from "./serviceCard";
+
+const iconMap = {
+  casino: Dice5,
+  school: School,
+  sports_esports: Gamepad2
+};
 
 export default function Services() {
   return (
@@ -9,7 +16,7 @@ export default function Services() {
         {/* Titre de section */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-(--primary) mb-4">
-            Nos activités
+            Nos solutions
           </h2>
           <div className="w-12 h-1 bg-(--secondary) mx-auto rounded-full mb-4"></div>
           <p className="text-(--on-surface-variant) max-w-2xl mx-auto font-medium">
@@ -17,13 +24,15 @@ export default function Services() {
           </p>
         </div>
 
-        {/* Grille utilisant notre classe CSS */}
-        <div className="services-grid">
+        {/* Grille responsive calquée sur le fichier global.css */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <ServiceCard
               key={index}
               title={service.title}
               description={service.description}
+              icon={iconMap[service.icon]}
+              borderColor={service.borderColor}
             />
           ))}
         </div>
